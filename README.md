@@ -7,6 +7,13 @@ the refresh token.
 
 This package is dependant on the package `python-keycloak`.
 
+## Install
+
+This package is hosted on pypi:
+```commandline
+pip install pyramid-keycloak
+```
+
 ## Usage
 
 ```python
