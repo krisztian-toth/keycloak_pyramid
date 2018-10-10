@@ -22,7 +22,7 @@ from pyramid.config import Configurator
 from keycloak_auth_policy import KeycloakBasedAuthenticationPolicy
 
 def main():
-    openid_client = KeycloakOpenID(...)
+    openid_client = KeycloakOpenID(...) # get OpenID client
     config = Configurator()
     config.set_authentication_policy(
         KeycloakBasedAuthenticationPolicy(openid_client))
@@ -53,6 +53,7 @@ You also need to have a callback endpoint where Keycloak redirects to after a
 successful login
 
 ```python
+from keycloak import KeycloakOpenID
 from keycloak.exceptions import KeycloakError
 from pyramid.httpexceptions import HTTPFound
 from pyramid.request import Request
@@ -64,7 +65,7 @@ class AuthApi:
 
     def __init__(self, request: Request) -> None:
         self.request = request
-        self._openid_client = ... # get OpenID client
+        self._openid_client = KeycloakOpenID(...) # get OpenID client
 
     @view_config(route_name='auth.exchange', request_method='GET',
                  permission='public')
