@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="pyramid_keycloak",
-    version="0.0.12",
+    version="0.0.13",
     author="Krisztian Toth",
     author_email="tkrisztiana@gmail.com",
     description="Keycloak based authentication policy for Pyramid",
