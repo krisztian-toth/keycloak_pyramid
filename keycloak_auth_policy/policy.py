@@ -74,6 +74,8 @@ class KeycloakBasedAuthenticationPolicy:
                 self.refresh_token_cookie_name, refresh_token)
 
             principal = self._introspect(access_token)
+            if not self._active_principal(principal):
+                return None
 
         return principal
 
