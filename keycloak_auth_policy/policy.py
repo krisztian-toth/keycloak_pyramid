@@ -35,7 +35,7 @@ class KeycloakBasedAuthenticationPolicy:
 
     def authenticated_userid(self, request):
         """
-        Validates the JWT token and returns the userprincipal.
+        Validates the JWT token and returns the user principal.
         Tries to refresh it before if the token is not valid anymore.
 
         :param request: the pyramid request
