@@ -3,7 +3,12 @@
 
 Authentication policy which uses Keycloak's OpenID API via a client
 to authenticate the user. It uses cookies to hold the access token and
-the refresh token.
+the refresh token. This package is suitable to handle OpenID's Authorization 
+code flow as described in [The OpenID Specs](https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth)
+or in [Keycloak's documentation](https://www.keycloak.org/docs/3.3/server_admin/topics/sso-protocols/oidc.html)
+
+![alt text](https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgQXV0aG9yaXphdGlvbiBjb2RlIGZsb3cKClVzZXItPlNlcnZpY2U6IEdFVCBodHRwczovL215LnMAEgYuY29tL3Jlc291cmNlCm5vdGUgb3ZlciAALglVc2VyIG5vdCBhdXRoZW50aWNhdGVkCgBQBy0-VXNlcjogMzAyOiBsb2MAgQAFPQBfCGlkZW50aXQAZwZlci9hdXRoAIEQB0kAFAdTABUFAIEQDgAiFQAjDgBwCDIwMDogTG9naW4gZm9ybQBGF1BPUwBAHiwgY3JlAIEoBWFscwBUFwCBTRYAgjsPaGFuZGxlX2NvZGU_Y29kZT1xMXcyZTMAgmErACoYAIJoCQCCDix0b2tlbgB8DQCCNxAAhBYJAIJFBXthY2Nlc3NfADMFOiBwMG85aTgsIHJlZnJlc2gADwh0NXI0ZTN9AIQaFEZldGNoIACERwkAhBcPAIMpBQCEZAk&s=magazine "Authorization code flow")
+ 
 
 This package is dependant on the package `python-keycloak`.
 
@@ -50,10 +55,7 @@ def forbidden_view(request: Request):
 ``` 
 If you want to use the Authorization code flow in your application, 
 you also need to have a callback endpoint where Keycloak redirects to after a 
-successful login. For more information about the Authorization code flow or 
-the other possible flows see 
-[The OpenID Specs](https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth)
-or [Keycloak's documentation](https://www.keycloak.org/docs/3.3/server_admin/topics/sso-protocols/oidc.html)
+successful login. 
 
 ```python
 from keycloak import KeycloakOpenID
