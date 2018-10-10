@@ -48,9 +48,12 @@ def forbidden_view(request: Request):
     # which consumes your API
     return HTTPFound(url)
 ``` 
-
-You also need to have a callback endpoint where Keycloak redirects to after a 
-successful login
+If you want to use the Authorization code flow in your application, 
+you also need to have a callback endpoint where Keycloak redirects to after a 
+successful login. For more information about the Authorization code flow or 
+the other possible flows see 
+[The OpenID Specs](https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth)
+or [Keycloak's documentation](https://www.keycloak.org/docs/3.3/server_admin/topics/sso-protocols/oidc.html)
 
 ```python
 from keycloak import KeycloakOpenID
