@@ -109,6 +109,7 @@ class KeycloakBasedAuthenticationPolicy:
 
         if user_principal:
             roles = user_principal.get('realm_access', {}).get('roles', [])
+            principals.append(Authenticated)
             for role in roles:
                 principals.append(role)
 
