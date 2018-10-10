@@ -5,6 +5,7 @@ Authentication policy which uses Keycloak's OpenID API via a client
 to authenticate the user. It uses cookies to hold the access token and
 the refresh token.
 
+This package is dependant on the package `python-keycloak`.
 
 ## Usage
 
